@@ -16,6 +16,11 @@ public class Receiver {
             socket.receive(packet);
 
             System.out.println("接收到：" + new String(packet.getData(), 0, packet.getLength()));
+
+            if (packet.getLength() == 0)
+                break;
         }
+
+        socket.close();
     }
 }
