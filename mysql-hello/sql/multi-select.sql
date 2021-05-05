@@ -1,0 +1,146 @@
+use hello;
+
+-- select
+--     ename,
+--     dname
+-- from
+--     (
+--         select
+--             *
+--         from
+--             emp
+--         where
+--             deptno = 10
+--     ) as emp,
+--     dept
+-- where
+--     emp.deptno = dept.deptno;
+-- select
+--     worker.ename '员工姓名',
+--     manager.ename '上级姓名'
+-- from
+--     (
+--         select
+--             ename,
+--             mgp
+--         from
+--             emp
+--         where
+--             mgp is not null
+--     ) worker,
+--     (
+--         select
+--             empno,
+--             ename
+--         from
+--             emp
+--     ) manager
+-- where
+--     worker.mgp = manager.empno;
+-- select
+--     ename,
+--     deptno
+-- from
+--     emp
+-- WHERE
+--     deptno = (
+--         select
+--             deptno
+--         from
+--             emp
+--         where
+--             ename = 'SMITH'
+--     );
+-- select
+--     ename,
+--     job,
+--     deptno
+-- from
+--     emp
+-- where
+--     job in (
+--         select
+--             distinct job
+--         from
+--             emp
+--         where
+--             deptno = 10
+--     )
+--     and deptno != 10;
+-- select
+--     ename,
+--     job,
+--     sal
+-- from
+--     emp
+-- where
+--     sal = (
+--         select
+--             max(sal)
+--         from
+--             emp
+--     );
+-- select
+--     ename,
+--     sal,
+--     deptno
+-- from
+--     emp
+-- order by
+--     sal desc
+-- limit
+--     0, 5;
+/* 子查询案例 */
+-- select
+--     ename,
+--     sal
+-- from
+--     (
+--         select
+--             ename,
+--             sal
+--         from
+--             emp
+--         where
+--             deptno != 10
+--     ) emp
+-- where
+--     sal > (
+--         select
+--             max(sal)
+--         from
+--             emp
+--         where
+--             deptno = 10
+--     );
+/* 子查询结合 any  */
+-- select
+--     ename,
+--     sal
+-- from
+--     (
+--         select
+--             ename,
+--             sal
+--         from
+--             emp
+--         where
+--             deptno != 10
+--     ) emp
+-- where
+--     sal > any(
+--         select
+--             sal
+--         from
+--             emp
+--         where
+--             deptno = 10
+--     );
+/* 多列子查询 */
+select
+    ename,
+    sal
+from
+    emp
+where
+    (job, deptno) = ('SALESMAN', 20);

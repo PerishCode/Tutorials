@@ -1,0 +1,50 @@
+use hello;
+
+-- select
+--     concat(ename, ' job is ', job) '合并字符串'
+-- from
+--     emp;
+-- select
+--     instr('hanyuanxi', 'xi')
+-- from
+--     dual;
+-- select
+--     concat(
+--         lcase(left(ename, 1)),
+--         substring(ename, 2)
+--     ) '奇怪的拼写'
+-- from
+--     emp;
+-- select
+--     USER()
+-- from
+--     dual;
+-- select
+--     database();
+-- select
+--     MD5('hanyuanxi');
+-- select
+--     length(md5('hanyuanxi'));
+-- select
+--     host,
+--     user,
+--     authentication_string
+-- from
+--     mysql.user;
+-- select
+--     ename,
+--     ifnull(comm, 0.00) as 'comm'
+-- from
+--     emp;
+-- select
+--     ename,
+--     (
+--         select
+--             case
+--                 when job = 'CLERK' then '职员'
+--                 when job = 'MANAGER' then '经理'
+--                 else job
+--             end
+--     ) as job
+-- from
+--     emp;

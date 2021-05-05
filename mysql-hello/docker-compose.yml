@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  database:
+    image: mysql:5.7.34
+    container_name: mysql-hello-database
+    ports:
+      - "4396:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: king
+    volumes:
+      - "./data:/var/lib/mysql"
+      - "./sql:/root/sql"
