@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  server:
+    image: tomcat:8-jdk11
+    container_name: tomcat-hello-server
+    ports:
+      - "7777:8080"
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: king
+    # volumes:
+    #   - "./data:/var/lib/mysql"
+    #   - "./sql:/root/sql"
