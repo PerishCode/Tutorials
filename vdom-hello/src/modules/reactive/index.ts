@@ -5,4 +5,13 @@ import {
   wrapFunctionAsDependency,
 } from './engine'
 
-export { reactive, observe, unobserve, wrapFunctionAsDependency }
+import { WeakMapExtension, MapExtension } from './types'
+
+export {
+  reactive,
+  observe,
+  unobserve,
+  wrapFunctionAsDependency,
+  WeakMapExtension,
+  MapExtension,
+}

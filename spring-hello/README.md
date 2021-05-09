@@ -38,3 +38,8 @@
 ### Spring 的解决方案
 
 - Spring Boot + Spring Cloud + Spring Cloud + DataFlow
+
+### 一些约定
+
+- 默认情况下程序入口所在包及所有子包的类都会被自动加载
+- 所有的配置文件最终都会被解析到某个配置类的实例上

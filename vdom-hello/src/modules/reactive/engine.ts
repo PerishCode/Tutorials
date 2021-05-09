@@ -78,6 +78,8 @@ function mountCallback(callback: Callback, { target, key }: Opeartion) {
 
   if (callbackSet.has(callback)) return
 
+  console.log('mount', target, key)
+
   callbackSet.add(callback)
   callback[__cleaners__]?.push(callbackSet)
 }

@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "target": true,
+    ".gitignore": true,
+    ".vscode": true,
+    "pom.xml": true,
+    "README.md": true
+  }
+}
