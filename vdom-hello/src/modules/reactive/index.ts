@@ -1,3 +1,8 @@
-export default function () {
-  console.log('Yeah')
-}
+import {
+  reactive,
+  observe,
+  unobserve,
+  wrapFunctionAsDependency,
+} from './engine'
+
+export { reactive, observe, unobserve, wrapFunctionAsDependency }
