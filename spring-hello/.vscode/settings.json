@@ -6,5 +6,6 @@
     ".vscode": true,
     "pom.xml": true,
     "README.md": true
-  }
+  },
+  "java.configuration.updateBuildConfiguration": "automatic"
 }

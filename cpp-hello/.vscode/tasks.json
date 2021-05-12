@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "Build",
+      "command": "/usr/bin/g++",
+      "args": ["-g", "main.cpp", "-o", "app"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "compiler: /usr/bin/g++",
+      "presentation": {
+        "echo": true,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    }
+  ]
+}

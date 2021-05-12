@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-App<spring>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "cn.edu.nju.ics.perish.demo.App",
+            "projectName": "spring",
+            "args": ""
+        }
+    ]
+}
