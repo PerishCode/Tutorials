@@ -1,28 +1,16 @@
-package main // 声明文件所在的包
+package main
 
-import (
-	"fmt"
+import "github.com/gin-gonic/gin"
 
-	"perish.top/hello/utils"
-) // 引入程序需要使用的包
-
-func init() {
-	fmt.Println("main's init")
-}
-
-// main 函数：可执行函数的入口
 func main() {
 
-	sum := 10 // 变量赋值 等价于 var sum int = 10 等价于 var sum = 10
+	gin.SetMode(gin.DebugMode)
 
-	// for 循环不能使用 var i = 1 的形式初始化入口参数
-	for i := 1; i < 5; i++ {
-		sum += i
-	}
-
-	fmt.Println(sum)
-
-	utils.SayHello()
-
-	utils.SayHi()
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+	})
+	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
