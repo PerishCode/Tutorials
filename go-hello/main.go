@@ -1,16 +1,27 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"time"
+
+	"perish.top/hello/core"
+	"perish.top/hello/utils"
+)
 
 func main() {
+	logProcessor := &core.LogProcessor{
+		Reader: &utils.FileReader{
+			FilePath: "/a",
+		},
+		Writer: &utils.InfluxWriter{
+			DataSource: "/b",
+		},
+		ReadChannel:  make(chan string),
+		WriteChannel: make(chan string),
+	}
 
-	gin.SetMode(gin.DebugMode)
+	go logProcessor.Read()
+	go logProcessor.Process()
+	go logProcessor.Write()
 
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	time.Sleep(time.Second * 1)
 }
